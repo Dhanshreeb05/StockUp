@@ -1,0 +1,25 @@
+<ng-template [ngIf]="showModal">
+  <div class="modal-container">
+    <div class="modal-wrapper">
+      <div class="modal-card" [ngClass]="getClasses()">
+        <div class="modal-header">
+          <p class="title">
+            <ng-content select=".title"></ng-content>
+          </p>
+          <button mat-icon-button class="colse-btn" (click)="toggleModal()">
+            <mat-icon>close</mat-icon>
+            <!-- <i class="fa fa-times" aria-hidden="true" style="font-size: 18px;"></i> -->
+          </button>
+        </div>
+
+        <div class="modal-content">
+          <ng-content select=".content"></ng-content>
+        </div>
+
+        <div class="modal-footer">
+          <ng-content select=".footer"></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

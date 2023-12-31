@@ -1,0 +1,185 @@
+<div class="login-container">
+  <div class="login-wrapper">
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12 my-col">
+     
+        <section class="info-card">
+          <div class="img-container">
+            <img
+              class="brand-img"
+              [src]="assetsPath + 'icons/stock-login.jpeg'"
+              alt=""
+            />
+          </div>
+
+          <!-- <p class="title">We are more than just a tool</p>
+          <p class="description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p> -->
+        </section>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 my-col">
+        <div class="login-card">
+          <section class="header">
+            <p class="title">
+              Sign Up
+              <!-- Sign In to <br />
+              LTI CANVAS RESILIENCE -->
+            </p>
+            <img
+              [src]="'assets/icons/172628_user_male_icon.png'"
+              alt=""
+              class="img-avatar"
+            />
+          </section>
+          <ng-template [ngIf]="formType === 'new' || formType === 'edit'">
+            <section class="content">
+              <form [formGroup]="signupForm">
+                <div style="width: 50%; float: left">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="First Name"
+                      formControlName="first_name"
+                      required
+                    />
+                    <mat-error
+                      *ngIf="
+                        signupForm.controls['first_name'].hasError('required')
+                      "
+                    >
+                      Please enter First Name
+                    </mat-error>
+                  </mat-form-field>
+  
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="Email address"
+                      formControlName="user_email"
+                      required
+                    />
+                    <mat-error
+                      *ngIf="
+                        signupForm.controls['user_email'].hasError('required')
+                      "
+                    >
+                      Please enter email id
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="Street No"
+                      formControlName="street_no"
+                      required
+                    />
+                    <mat-error
+                      *ngIf="
+                        signupForm.controls['street_no'].hasError('required')
+                      "
+                    >
+                      Please enter Street No
+                    </mat-error>
+                  </mat-form-field>
+  
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="Town"
+                      formControlName="town"
+                      required
+                    />
+                    <mat-error
+                      *ngIf="signupForm.controls['town'].hasError('required')"
+                    >
+                      Please enter Town
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+  
+                <div style="width: 50%; float: right">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="Last Name"
+                      formControlName="last_name"
+                      required
+                    />
+                    <mat-error
+                      *ngIf="
+                        signupForm.controls['last_name'].hasError('required')
+                      "
+                    >
+                      Please enter Last Name
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input
+                      matInput
+                      placeholder="Password"
+                      [type]="hide ? 'password' : 'text'"
+                      formControlName="password"
+                      required
+                    />
+                    <mat-error
+                      *ngIf="signupForm.controls['password'].hasError('required')"
+                    >
+                      Please enter password
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="Street Name"
+                      formControlName="street_name"
+                      required
+                    />
+                    <mat-error
+                      *ngIf="
+                        signupForm.controls['street_name'].hasError('required')
+                      "
+                    >
+                      Please enter Street Name
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="Zip Code"
+                      formControlName="zip_code"
+                      required
+                    />
+                    <mat-error
+                      *ngIf="signupForm.controls['zip_code'].hasError('required')"
+                    >
+                      Please enter Zip Code
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+  
+                <div class="btn-grp">
+                  <button
+                    mat-raised-button
+                    type="button"
+                    class="Sign-Up-btn"
+                    (click)="onSignup(formType)"
+                  >
+                    Register
+                  </button>
+                </div>
+              </form>
+            </section>
+          </ng-template>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="msg-container">
+  <app-message></app-message>
+</div>

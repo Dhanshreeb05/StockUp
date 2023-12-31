@@ -1,0 +1,22 @@
+@import '../../assets/ext_css/variables.scss';
+
+.my-header {
+    padding: 0.3rem 0 !important;
+    box-shadow: none !important;
+    background: $whiteBG;
+
+    .my-header-wrapper {
+        .navbar-brand {
+            img {
+                height: 55px;
+                width: 300px;
+            }
+        }
+
+        .user-btn {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+        }
+    }
+}

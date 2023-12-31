@@ -1,0 +1,39 @@
+<ng-template [ngIf]="isMessageShown">
+  <span [ngSwitch]="message?.type">
+
+    <div *ngSwitchCase="'success'">
+      <div class="message-card success">
+        <p class="message">{{ message?.message }}</p>
+        <button mat-icon-button class="close-btn" (click)="closeMessage()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'fail'">
+      <div class="message-card fail">
+        <p class="message">{{ message?.message }}</p>
+        <button mat-icon-button class="close-btn" (click)="closeMessage()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'info'">
+      <div class="message-card info">
+        <p class="message">{{ message?.message }}</p>
+        <button mat-icon-button class="close-btn" (click)="closeMessage()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div *ngSwitchCase="'warning'">
+      <div class="message-card warning">
+        <p class="message">{{ message?.message }}</p>
+        <button mat-icon-button class="close-btn" (click)="closeMessage()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </span>
+</ng-template>

@@ -1,0 +1,51 @@
+@import '../../../../assets/ext_css/variables.scss';
+
+.message-card {
+    position: relative;
+    padding: 15px;
+    box-shadow: $cardShadow;
+    border-radius: 5px;
+    max-width: 350px;
+
+    .message {
+        width: 80%;
+        display: inline-block;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: $font;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        color: white;
+    }
+
+    .close-btn {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 32px;
+        height: 32px;
+        line-height: 42px;
+        color: white;
+
+        mat-icon {
+            font-size: 18px;
+        }
+    }
+}
+
+.success {
+    background: $successBG !important;
+}
+
+.info {
+    background: $primaryBG !important;
+}
+
+.fail {
+    background: $failBG !important;
+}
+.warning
+{
+    background: $warningBG !important;
+}

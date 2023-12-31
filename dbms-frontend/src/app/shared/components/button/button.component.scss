@@ -1,0 +1,17 @@
+@import '../../../../assets/ext_css/variables.scss';
+
+.chaos-dashboard-container {
+    .chaos-dashboard-wrapper {
+        .page-content {
+            .my-form-group {
+                position: relative;
+                display: inline-block;
+                border: 1px solid rgba(0, 0, 0, 0.12);
+                padding: 3px;
+                line-height: 10px;
+                border-radius: 4px !important;
+                margin: -12px 0px;
+            }
+         }
+    }
+}

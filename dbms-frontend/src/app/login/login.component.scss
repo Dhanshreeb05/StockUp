@@ -1,0 +1,174 @@
+@import '../../assets/ext_css/variables.scss';
+
+.login-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999999999999;
+
+    background: $primaryBG;
+
+    .login-wrapper {
+        padding: 50px 100px;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        overflow-y: hidden;
+
+        .row {
+            height: 100%;
+
+            .my-col {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+
+        .info-card {
+            position: relative;
+            height: 100%;
+            padding: 0;
+
+            .img-container {
+                position: absolute;
+                bottom: 50px;
+                padding: 50px;
+
+                .brand-img {
+                    width: 100%;
+                }
+            }
+
+            .title {
+                font-size: 28px;
+                font-weight: 500;
+                color: #0D2D87;
+            }
+
+            .description {
+                font-size: 15px;
+                font-weight: 500;
+                color: #000;
+                text-align: justify;
+            }
+        }
+
+        .login-card {
+            position: relative;
+            height: 100%;
+            padding: 10px 20px;
+            background: #fff 0% 0% no-repeat padding-box;
+            border-radius: 5px;
+            box-shadow: $cardShadow;
+
+            .header {
+                padding: 10px 0;
+                border-bottom: 1px solid $primaryColor;
+                text-align: center;
+
+                .title {
+                    font-size: 24px;
+                    font-weight: bolder;
+                    color: $primaryColor;
+                    line-height: 25px;
+                }
+
+                .img-avatar {
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+
+            .content {
+                padding: 10px 0;
+
+                form {
+                    mat-form-field {
+                        width: 100%;
+                        margin: 7px auto;
+
+                        input {
+                            font-size: 17px;
+                        }
+                    }
+
+                    .btn-grp {
+                        button {
+                            width: 100%;
+                            margin: 10px 0;
+                        }
+                    }
+                }
+            }
+
+            .footer {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 0 !important;
+                margin: 0 !important;
+
+                .version-info {
+                    font-size: 18px;
+                    font-weight: 500;
+                    text-align: right;
+
+                    margin: 0 !important;
+                    padding: 0 5px !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .login-wrapper {
+        width: 97% !important;
+        padding: 20px !important;
+
+        .info-card {
+            padding: 30px 15px !important;
+
+            .title {
+                font-size: 16px !important;
+            }
+
+            .description {
+                font-size: 12px !important;
+            }
+        }
+
+        .login-card {
+            padding: 20px 10px !important;
+
+            .header {
+                .title {
+                    font-size: 16px !important;
+                }
+            }
+
+            .content {
+                padding: 10px 0 !important;
+
+                form {
+                    mat-form-field {
+                        margin: 3px auto !important;
+
+                        input {
+                            font-size: 14px !important;
+                        }
+                    }
+
+                    .btn-grp {
+                        button {
+                            margin: 5px 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

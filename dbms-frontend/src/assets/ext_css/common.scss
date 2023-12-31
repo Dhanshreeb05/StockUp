@@ -1,0 +1,435 @@
+@import "./variables.scss";
+
+*,
+html,
+body {
+  box-sizing: padding-box;
+}
+
+.cdk-overlay-container {
+  z-index: 999999999999999 !important;
+
+  .mat-menu-panel {
+    min-height: fit-content !important;
+
+    .mat-menu-content {
+      padding: 0 !important;
+    }
+  }
+}
+
+.my-btn {
+  font-family: $font;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.btn-vertical-align-top {
+  position: relative;
+  top: -7px;
+}
+
+.btn-vertical-align-bottom {
+  position: relative;
+  top: 5px;
+}
+
+.primary-btn {
+  color: $primaryColor;
+}
+
+.secondary-btn {
+  color: $secondaryColor;
+}
+
+.raised-primary-btn {
+  background: $primaryBG;
+  color: $whiteColor;
+
+  &:hover {
+    color: $whiteColor;
+  }
+}
+
+.raised-secondary-btn {
+  background: $secondaryBG;
+  color: $blackColor;
+
+  &:hover {
+    color: $blackColor;
+  }
+}
+
+.stroked-primary-btn {
+  border: 1px solid #eee !important;
+  color: $primaryColor;
+
+  &:hover {
+    border: 1px solid $primaryColor !important;
+    background: $hoverBG;
+  }
+}
+
+.stroked-primary-btn {
+  border: 1px solid #eee !important;
+  color: $primaryColor;
+
+  &:hover {
+    border: 1px solid $primaryColor !important;
+    background: $hoverBG;
+  }
+}
+
+.stroked-secondary-btn {
+  border: 1px solid #eee !important;
+  color: $secondaryColor;
+
+  &:hover {
+    border: 1px solid $secondaryColor !important;
+    background: $hoverBG;
+  }
+}
+
+.icon-img {
+  height: 22px;
+  width: 22px;
+  vertical-align: baseline;
+}
+
+.row {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  .my-col {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    .my-col-wrapper {
+      padding: 0 5px;
+    }
+  }
+}
+
+.my-mat-form-field {
+  width: 100%;
+
+  mat-label,
+  input {
+    font-family: $font !important;
+    font-size: 15px;
+
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .password-field {
+    -webkit-text-security: square !important;
+  }
+}
+
+.table-container {
+  padding: 0 !important;
+  margin: 0 !important;
+
+  background: $whiteBG;
+  box-shadow: $cardShadow;
+  border-radius: 2px;
+
+  .table-responsive {
+    padding: 0 !important;
+    margin: 0 !important;
+
+    table {
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100%;
+      thead {
+        th {
+          margin: 0 !important;
+          padding: 5px 10px;
+          border-bottom: 1px solid #eee;
+
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      tbody {
+        tr {
+          margin: 0 !important;
+          padding: 0 !important;
+          border-bottom: 1px solid #eee;
+
+          &:hover {
+            background: #eee 0% 0% no-repeat padding-box;
+          }
+
+          td {
+            margin: 0 !important;
+            padding: 8px 10px !important;
+
+            p {
+              margin: 0 !important;
+              padding: 0 !important;
+
+              font-family: $font;
+              font-size: 14px;
+            }
+
+            .width-sm {
+              width: 100px !important;
+            }
+
+            .width-md {
+              width: 200px !important;
+            }
+
+            .width-lg {
+              width: 300px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.my-card {
+  padding: 0 !important;
+  width: 100%;
+  background: $whiteBG;
+  box-shadow: $cardShadow;
+  border-radius: 5px;
+
+  .header-wrapper {
+    position: relative;
+    height: 60px;
+    border-bottom: 1px solid #eee;
+
+    .card-avatar {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 40px;
+      width: 40px;
+    }
+
+    .header-info {
+      position: absolute;
+      top: 10px;
+      left: 70px;
+
+      p {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: $font !important;
+        letter-spacing: 0.5px !important;
+      }
+
+      .title {
+        font-size: 18px !important;
+        font-weight: 500 !important;
+      }
+
+      .subtitle {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .content-wrapper {
+    .card-img {
+      height: 300px;
+      width: 100%;
+    }
+
+    .details {
+      margin: 0 !important;
+      padding: 10px !important;
+      font-family: $font;
+      font-size: 13px;
+      text-align: justify;
+    }
+  }
+
+  .footer-wrapper {
+    border-top: 1px solid #eee;
+
+    .btn-grp {
+      app-button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.page-container {
+  .page-wrapper {
+    padding: 10px 15px;
+
+    .page-header {
+      .app-bar-content {
+        .page-title {
+          padding: 0;
+          margin: 0;
+          margin-top: 6px;
+
+          font-family: $font;
+          font-size: $mdFontSize;
+          font-weight: bolder;
+          letter-spacing: 0.4px;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .page-content {
+      margin: 10px 0;
+    }
+  }
+}
+
+.chart-card {
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: $cardShadow;
+  background: $whiteBG;
+
+  .header {
+    position: relative;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+
+    .title {
+      padding: 0 !important;
+      margin: 0 !important;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .fullscreen-btn {
+      position: absolute;
+      right: 0px;
+      top: -5px;
+
+      mat-icon {
+        font-size: 18px;
+        height: 18px;
+        width: 18px;
+      }
+    }
+  }
+
+  .content {
+  }
+}
+
+// shared expansion panel styling
+.my-expansion-panel-container {
+  .my-expansion-panel-wrapper {
+    .my-accordian {
+      .panel-title {
+        .title {
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+      }
+
+      .panel-description {
+        .description {
+          display: inline-block !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+
+        .panel-icon {
+          vertical-align: middle !important;
+          margin: 0 10px !important;
+        }
+      }
+
+      .panel-content {
+      }
+    }
+  }
+}
+
+// shared full screen modal styling
+.full-screen-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999999;
+
+  .full-screen-modal-wrapper {
+    padding: 30px 50px;
+
+    .full-screen-modal-card {
+      background: $whiteBG;
+      box-shadow: $cardShadow;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+
+      .full-screen-modal-card-header {
+        position: relative;
+        padding: 10px 10px;
+        background: $primaryBG;
+        border-top-right-radius: 30px;
+
+        .title {
+          padding: 0 !important;
+          margin: 0 !important;
+
+          font-family: $font;
+          font-size: 18px;
+          font-weight: 500;
+          color: #fff;
+        }
+
+        .close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+
+          mat-icon {
+            color: $whiteColor;
+          }
+        }
+      }
+
+      .full-screen-modal-card-content {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.modal-form-wrapper {
+  .modal-form {
+    .my-mat-form-field .mat-form-field-wrapper {
+      position: relative;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+
+      mat-error {
+        margin-top: 5px !important;
+      }
+    }
+
+    .btn-grp {
+      width: 100%;
+      padding: 0 10px;
+      text-align: right;
+
+      button {
+        margin: 0 5px;
+        width: fit-content !important;
+      }
+    }
+  }
+}

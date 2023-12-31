@@ -1,0 +1,100 @@
+<div class="login-container">
+  <div class="login-wrapper">
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12 my-col">
+        <section class="info-card">
+          <div class="img-container">
+            <img
+              class="brand-img"
+              [src]="'/assets/icons/stockmarket.webp'"
+              alt="Stock"
+            />
+          </div>
+
+          <!-- <p class="title">We are more than just a tool</p>
+        <p class="description">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p> -->
+        </section>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 my-col">
+        <div class="login-card">
+          <section class="header">
+            <p class="title">
+              Login
+              <!-- Sign In to <br />
+            LTI CANVAS RESILIENCE -->
+            </p>
+            <img
+              [src]="'assets/icons/172628_user_male_icon.png'"
+              alt=""
+              class="img-avatar"
+            />
+          </section>
+
+          <section class="content">
+            <form [formGroup]="loginForm">
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Email address"
+                  formControlName="email"
+                  required
+                />
+                <mat-error
+                  *ngIf="loginForm.controls['email'].hasError('required')"
+                >
+                  Please enter an Email Id
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Password"
+                  [type]="hide ? 'password' : 'text'"
+                  formControlName="password"
+                  required
+                />
+                <mat-error
+                  *ngIf="loginForm.controls['password'].hasError('required')"
+                >
+                  Please enter a password
+                </mat-error>
+              </mat-form-field>
+              <div class="btn-grp">
+                <button
+                  mat-raised-button
+                  type="submit"
+                  color="primary"
+                  class="Login-btn"
+                  (click)="onLogin()"
+                >
+                  Login
+                </button>
+                <br />
+                <br />
+                <br />
+                <button
+                  mat-raised-button
+                  type="button"
+                  class="Sign-Up-btn"
+                  (click)="onSignup()"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <section class="footer">
+            <p class="version-info">v{{ "1.0.0" }}</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

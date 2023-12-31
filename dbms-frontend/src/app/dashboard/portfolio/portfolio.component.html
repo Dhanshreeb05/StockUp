@@ -1,0 +1,166 @@
+<div class="portfolio-container">
+    <div class="portfolio-wrapper">
+      <div class="row">
+        <table
+          mat-table
+          [dataSource]="dataSource"
+          multiTemplateDataRows
+          class="mat-elevation-z8"
+        >
+          <ng-container
+            matColumnDef="{{ column }}"
+            *ngFor="let column of columnsToDisplay"
+          >
+            <mat-header-cell *matHeaderCellDef> {{ column }} </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element[column] }}
+            </mat-cell>
+          </ng-container>
+  
+          <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+          <ng-container matColumnDef="expandedDetail">
+            <mat-cell
+              *matCellDef="let element"
+              [attr.colspan]="columnsToDisplay.length"
+            >
+              <div
+                class="example-element-detail"
+                [@detailExpand]="
+                  element == expandedElement ? 'expanded' : 'collapsed'
+                "
+              >
+                <app-button
+                  [type]="'raised'"
+                  [classes]="'my-btn raised-secondary-btn buy'"
+                  [label]="'BUY'"
+                  (userAction)="
+                    toggleModal(
+                      'buy',
+                      element.share_symbol,
+                      element.current_share_rate
+                    )
+                  "
+                >
+                </app-button>
+  
+            <app-button
+                  [type]="'raised'"
+                    [classes]="'my-btn raised-secondary-btn sell'"
+                    [label]="'SELL'"
+                    (userAction)="toggleModal('sell',element.share_symbol,element.current_share_rate)"
+                    >
+                    </app-button>
+
+               
+              </div>
+            </mat-cell>
+          </ng-container>
+  
+          <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+          <mat-row
+            *matRowDef="let element; columns: columnsToDisplay"
+            class="example-element-row"
+            [class.example-expanded-row]="expandedElement === element"
+            (click)="
+              expandedElement = expandedElement === element ? null : element
+            "
+          >
+          </mat-row>
+          <mat-row
+            *matRowDef="let row; columns: ['expandedDetail']"
+            class="example-detail-row"
+          ></mat-row>
+        </table>
+      </div>
+    </div>
+  </div>
+  <ng-template [ngIf]="showBuyModal">
+    <app-modal [modalWidth]="'20%'">
+      <div class="title">{{ this.modalTitle }}</div>
+      <div class="content">
+        <section class="modal-form-wrapper">
+          <form [formGroup]="buyForm" class="modal-form">
+            <mat-form-field appearance="outline" class="my-mat-form-field">
+              <mat-label> Share Symbol</mat-label>
+              <input readonly matInput formControlName="shareSymbol" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="my-mat-form-field">
+              <mat-label> Share Price</mat-label>
+              <input readonly matInput formControlName="price" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="my-mat-form-field">
+              <mat-label> Quantity</mat-label>
+              <input matInput formControlName="quantity" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="my-mat-form-field">
+              <mat-label> Buy Trigger</mat-label>
+              <input matInput formControlName="buytrigger" />
+            </mat-form-field>
+  
+            <div class="btn-grp">
+              <app-button
+                [type]="'raised'"
+                [classes]="'my-btn raised-secondary-btn'"
+                [label]="'Cancel'"
+                (userAction)="buyFormClear()"
+              ></app-button>
+  
+              <app-button
+                [type]="'raised'"
+                [classes]="'my-btn raised-secondary-btn'"
+                [label]="'Buy'"
+                (userAction)="buyProvidedShare()"
+              ></app-button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </app-modal>
+  </ng-template>
+  
+  <ng-template [ngIf]="showSellModal">
+
+        <app-modal [modalWidth]="'20%'">
+            <div class="title">{{ this.modalTitle }}</div>
+            <div class="content">
+              <section class="modal-form-wrapper">
+                <form [formGroup]="sellForm" class="modal-form">
+                  <mat-form-field appearance="outline" class="my-mat-form-field">
+                    <mat-label> Share Symbol</mat-label>
+                    <input readonly matInput formControlName="shareSymbol" />
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" class="my-mat-form-field">
+                    <mat-label> Share Price</mat-label>
+                    <input readonly matInput formControlName="price" />
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" class="my-mat-form-field">
+                    <mat-label> Quantity</mat-label>
+                    <input matInput formControlName="quantity" />
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" class="my-mat-form-field">
+                    <mat-label> Sell Trigger</mat-label>
+                    <input matInput formControlName="selltrigger" />
+                  </mat-form-field>
+        
+                  <div class="btn-grp">
+                    <app-button
+                      [type]="'raised'"
+                      [classes]="'my-btn raised-secondary-btn'"
+                      [label]="'Cancel'"
+                      (userAction)="sellFormClear()"
+                    ></app-button>
+        
+                    <app-button
+                      [type]="'raised'"
+                      [classes]="'my-btn raised-secondary-btn'"
+                      [label]="'Sell'"
+                      (userAction)="sellProvidedShare()"
+                    ></app-button>
+                  </div>
+                </form>
+              </section>
+            </div>
+          </app-modal>
+
+  </ng-template>
+  

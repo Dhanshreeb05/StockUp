@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/ext_css/common.scss";
+@import "assets/ext_css/variables.scss";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "assets/ext_css/bootstrap.min.css";
+
+html,
+body {
+  height: 100% !important;
+}
+
+body {
+  margin: 0;
+  font-family: $font;
+  color: $blackColor;
+  background: #edeef1 0% 0% no-repeat padding-box;
+}

@@ -1,0 +1,545 @@
+// VARIALBLES
+
+//single color
+$blackMain: #070716;
+$blueMain: #009ADE;
+$redMain: red;
+$darkBlueMain: #8c8df8;
+$blueHover: #f6f5ff;
+$whiteMain: #ffffff;
+$greyMain: #0c0303;
+$darkgreyMain: #414042;
+$lightGrey: #E7E7E7;
+$lightBlueMain: rgba(117, 127, 253, 0.08); //use with opacity
+// $inputFocus: rgba(96,144,248,0.5);
+$whiteButton: rgba(19, 3, 3, 0.2);
+$disable: #eee;
+$whiteOpacity: rgba(255, 255, 255, 0.02);
+$loginWhite: rgba(255, 255, 255, 0.1);
+$success: #47D799;
+$error: #FF3E3E;
+$progressBlueMain: rgba(173,174,255,1);
+$progressDarkBlueMain: rgba(120,121,251,1);
+$backgroundMain: linear-gradient(to bottom right, rgb(19, 14, 31), #313135);
+
+// gradients
+$progressGradient: linear-gradient(to left, rgba(120,121,251,1) 51%, rgba(173,174,255,1));
+$blackGradient: linear-gradient(to bottom, #343434, #101010);
+$blueGradient: linear-gradient(to bottom, #8d8efa, #57528d);
+$blueGradientToRight: linear-gradient(to right, #8d8efa, #57528d);
+$purpleGradient: linear-gradient(to bottom right, #7879fb, #645596);
+$redGradient: linear-gradient(to right, #e25083, #774965);
+$whiteGraident: linear-gradient(225deg, #f6f5ff, #ffffff 51%, #f6f5ff);
+$blueMainGradient: linear-gradient(to bottom, rgba(135, 139, 237, 0.9), rgba(127, 118, 235, 0.9));
+
+body {
+  font-family: proxima-nova, "Roboto", "Open Sans", sans-serif, "Raleway";
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.body-container {
+  background: $backgroundMain;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.main-content {
+  margin: 55px 88px;
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 64px;
+  color: $whiteMain;
+  font-family: "Saira", "Roboto", "Open Sans", sans-serif, "Raleway";
+  font-weight: 700 !important;
+}
+
+h2,
+h3 {
+  color: $whiteMain;
+  font-family: proxima-nova, "Roboto", "Open Sans", sans-serif, "Raleway";
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: normal !important;
+}
+
+.title-bar {
+  height: 8px;
+  background-color: $whiteMain;
+  margin: 0 88px 32px 0;
+}
+
+label {
+  display: block;
+  color: $lightGrey;
+  font-family: proxima-nova-condensed;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+
+  &.error {
+    color: $error;
+  };
+}
+
+/* Format Inputs */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+textarea {
+  display: block;
+  border-color: transparent;
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: $darkgreyMain;
+  box-shadow: inset 1px 1px 8px 0 rgba(0,0,0,0.4);
+  margin-bottom: 32px;
+  padding-left: 10px;
+  color: $lightGrey;
+  font-family: proxima-nova-condensed;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+
+  :-ms-input-placeholder,
+  ::-ms-input-placeholder,
+  ::placeholder {
+    color: $greyMain;
+    font-family: proxima-nova-condensed;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  &.array-input {
+    //for inputs that are dynamically created from an array based on user input
+    display: inline-block;
+  }
+
+  &:hover {
+    border: 1px solid $lightGrey;
+  }
+
+  &:active,
+  &:focus {
+    border: 1px solid $blueMain;
+    outline-style: none;
+  }
+
+  &:disabled {
+    border-style: none;
+    color: $lightGrey;
+  }
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"] {
+  height: 40px;
+  width: 368px;
+}
+
+input[type="date"] {
+  &:-ms-input-placeholder,
+  ::-ms-input-placeholder,
+  ::placeholder {
+    visibility: none !important;
+  }
+}
+
+// ::-webkit-calendar-picker-indicator {
+//   display: none;
+// }
+
+textarea {
+  height: 264px;
+  width: 736px;
+}
+
+input[type="text"].success,
+input[type="number"].success,
+input[type="date"].success,
+input[type="email"].success,
+textarea.success {
+  border: 1px solid $success;
+
+  &:hover {
+    border: 1px solid $lightGrey;
+  }
+
+  &:active,
+  &:focus {
+    border: 1px solid $blueMain;
+    outline-style: none;
+  }
+}
+
+input[type="text"].error,
+input[type="number"].error,
+input[type="date"].error,
+input[type="email"].error,
+textarea.error {
+  border: 1px solid $error;
+
+  &:hover {
+    border: 1px solid $lightGrey;
+  }
+
+  &:active,
+  &:focus {
+    border: 1px solid $blueMain;
+    outline-style: none;
+  }
+}
+
+.alter-array {
+  font-size: 28px;
+  line-height: 40px;
+  cursor: default;
+}
+
+/*Format Radio Buttons*/
+input[type="radio"].radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 4px;
+  left: 0;
+  border-radius: 50%;
+  border: 2.5px solid $blueMain;
+  background-color: transparent;
+  transition: 0.2s all linear;
+  outline: none;
+  height: 22px;
+  width: 22px;
+  margin: 0 8px 0 0 !important;
+
+  &:hover {
+    border: 4px solid $blueMain;
+  }
+
+  &:checked {
+    border: 2.5px solid $blueMain;
+  }
+
+  &:focus {
+    outline-style: none;
+  }
+
+  &:disabled {
+    border: 2.5px solid $greyMain;
+  }
+}
+
+input[type="radio"]:checked ~ .radio-checked {
+  display: inline-block;
+}
+
+.radio-checked {
+  position: relative;
+  display: none;
+  top: -2px;
+  left: -24px;
+  width: 10px;
+  height: 10px;
+  margin-right: -9px;
+  border-radius: 50%;
+  background: $blueMain;
+}
+
+div.cb,
+div.radio {
+  height: 32px;
+  vertical-align: middle;
+  font-family: proxima-nova-condensed;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+/*Format Checkboxes*/
+input[type="checkbox"] {
+  /* Hide the browser's default checkbox */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  opacity: 0;
+  top: 5px;
+  left: 0;
+  height: 22px;
+  width: 22px;
+
+  &:hover ~ .cb-box {
+    /* On mouse-over, increase border-width */
+    border: 5px solid $blueMain;
+    height: 13px;
+    width: 13px;
+  }
+
+  &:checked ~ .cb-box {
+    /* When the checkbox is checked, return border-width to normal */
+    border: 2.5px solid $blueMain;
+    height: 18px;
+    width: 18px;
+  }
+
+  &:checked ~ .cb-box:after {
+    /*When the checkbox is checked, show checkmark*/
+    display: block;
+  }
+
+  &:disabled ~ .cb-box {
+    /*When the checkbox is disabled, turn border grey*/
+    border: 2.5px solid $greyMain;
+    height: 18px;
+    width: 18px;
+  }
+
+  &:disabled ~ .cb-box:after {
+    /*When the checkbox is disabled, show checkmark and turn it grey*/
+    display: block;
+    border-color: $greyMain;
+  }
+}
+
+.question-container {
+  margin-bottom: 32px;
+}
+
+.cb-box {
+  /* Create a custom checkbox */
+  display: inline-block;
+  position: relative;
+  height: 18px;
+  width: 18px;
+  z-index: 5;
+  top: 4px;
+  left: -28px;
+  border-radius: 4px;
+  border: 2.5px solid $blueMain;
+  background-color: transparent;
+  transition: 0.2s all linear;
+  outline: none;
+  z-index: -10;
+
+  &:after {
+    /* Create the checkmark/indicator (hidden when not checked) */
+    content: "";
+    position: relative;
+    display: none;
+    position: relative;
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 8px;
+    border: solid $blueMain;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+button {
+  height: 40px;
+  width: 220px;
+  margin-top: 16px;
+  background-color: $blackMain;
+  border-style: none;
+  box-shadow: 1px 6px 9px 7px rgba(25,38,44,0.16);
+  color: $whiteMain;
+  font-family: proxima-nova;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.1px;
+  line-height: 24px;
+  text-align: center;
+  outline-style: none;
+  cursor: pointer;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $blueMain;
+  };
+
+  &:disabled {
+    color: $greyMain;
+
+    &:hover {
+      background-color: $darkgreyMain;
+    }
+  };
+
+  &.square {
+    border-radius: 5px;
+  }
+
+  &.rounded {
+    border-radius: 24px;
+  }
+}
+
+/*Adds extra space to the bottom of the page*/
+.foot-space {
+  height: 55px;
+  width: 50%;
+}
+
+/*Format Dropdown Boxes*/
+/* Style The Dropdown Button */
+.dropbtn {
+  height: 48px;
+  width: 368px;
+  background-color: $darkgreyMain;
+  color: $lightGrey;
+  font-weight: normal;
+  padding: 12px 16px;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  line-height: 24px;
+  text-align: left;
+  border-style: none;
+  // cursor: pointer;
+  border-radius: 4px;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $darkgreyMain;
+    color: $lightGrey;
+  }
+
+  &.error {
+    border: 1px solid $error;
+  }
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: block;
+  margin-bottom: 32px;
+  width: 400px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 368px;
+  max-height: 368px;
+  overflow-y: auto;
+  background-color: $darkgreyMain;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  line-height: 24px;
+  box-shadow: 1px 6px 9px 7px rgba(25,38,44,0.16);
+  z-index: 10;
+}
+
+/* Arrow on the right side of the drop down bar*/
+.dd-arrow {
+  width: 8px;
+  float: right;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+/* Down Arrow (Displayed by Default) */
+.down-arrow {
+  display: inline;
+}
+/* Up Arrow (Hidden by Default) */
+.up-arrow {
+  display: none;
+}
+
+/* Links inside the dropdown */
+.dropdown-content div {
+  color: $lightGrey;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+  /* Change color of dropdown links on hover */
+  &:hover {
+    background-color: $whiteMain;
+    color: $darkgreyMain;
+  }
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hide the dropdown menu on hover when have class of no-hover */
+.dropdown:hover .dropdown-content.no-hover {
+  display: none;
+}
+
+/* Show the up arrow on hover */
+.dropdown:hover .up-arrow {
+  display: inline;
+}
+/* Hide the down arrow on hover */
+.dropdown:hover .down-arrow {
+  display: none;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: $darkgreyMain;
+  color: $lightGrey;
+  border-bottom: 1px solid $lightGrey;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/*Lottie Animation Classes */
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    // width: 80px;
+  }
+}
+
+h1 {
+  margin: 0 0 9px;
+}
+
+input.error {
+  margin-bottom: 8px;
+}
+
+div.err-msg {
+  color: $error;
+  font-family: proxima-nova-condensed;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+.next {
+  height: 40px;
+  width: 96px;
+}

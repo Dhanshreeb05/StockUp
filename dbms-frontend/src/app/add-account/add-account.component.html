@@ -1,0 +1,48 @@
+<div class="body-container">
+  <form name="f" [formGroup]="ClientForm" class="form">
+    <div class="wrapper">
+      <div class="main-content">
+        <h1>Add Bank Account</h1>
+        <hr class="title-bar" />
+        <label> Bank Name</label>
+        <input
+          name="name"
+          formControlName="bankname"
+          placeholder="Enter Name"
+          type="name"
+          required
+        />
+        <div *ngIf="formErrors.bankname" class="err-msg">
+          Bank Nameis required
+        </div>
+        <label for="firstName">Account Number</label>
+        <input
+          name="name"
+          formControlName="accnumber"
+          placeholder="Enter Name"
+          type="name"
+          required
+        />
+        <div *ngIf="formErrors.accnumber" class="err-msg">
+          Account Number required
+        </div>
+        <label for="ssnKey">Routing Number</label>
+        <input
+          name="name"
+          formControlName="routingnumber"
+          placeholder="Enter Routing Number"
+          type="name"
+          required
+        />
+        <div *ngIf="formErrors.routingnumber" class="err-msg">
+          Routing Number required
+        </div>
+        <br />
+        <button (click)="onSubmit()" class="next square" name="button">
+          Submit
+        </button>
+        <div class="foot-space"></div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="home-container">
+  <div class="header-container">
+    <app-header></app-header>
+  </div>
+  <div class="main-container">
+    <br />
+    <br />
+    <br />
+    <mat-tab-group
+      mat-stretch-tabs
+      class="tabs"
+      (selectedTabChange)="onTabChanged($event)"
+    >
+      <mat-tab label="Stocks" class="tab">
+        <app-stocklist
+          #panel1
+          *ngIf="selectedTabIndex === 0"
+          [dataSource]="dataSource"
+        ></app-stocklist>
+      </mat-tab>
+      <mat-tab label="WatchList" class="tab">
+        <app-watchlist #panel2 *ngIf="selectedTabIndex === 1"></app-watchlist>
+      </mat-tab>
+      <mat-tab label="Portfolio">
+        <app-portfolio #panel3 *ngIf="selectedTabIndex === 2"></app-portfolio>
+      </mat-tab>
+      <mat-tab label="Insights" class="tab">
+        <app-insights #panel4 *ngIf="selectedTabIndex === 3"></app-insights>
+         </mat-tab>
+         <mat-tab label="Orders">
+          <app-orders #panel5 *ngIf="selectedTabIndex === 4"></app-orders>
+        </mat-tab>
+         <mat-tab label="New Letter">
+          <app-newletter #panel4 *ngIf="selectedTabIndex === 5"></app-newletter>
+        </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

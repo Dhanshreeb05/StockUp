@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg my-header">
+  <div class="my-header-wrapper">
+    <a class="navbar-brand">
+      <img [src]="'/assets/icons/stockicon.png'" alt="Logo" />
+    </a>
+    <app-button
+      [type]="'raised'"
+      [classes]="'my-btn raised-secondary-btn buy'"
+      [label]="'Delete User'"
+      (userAction)="deleteUser()"
+    >
+    </app-button>
+    <app-button
+      [type]="'raised'"
+      [classes]="'my-btn raised-secondary-btn buy'"
+      [label]="'Update User'"
+      (userAction)="updateUser()"
+    >
+    </app-button>
+
+    <app-button
+      [type]="'raised'"
+      [classes]="'my-btn raised-secondary-btn buy'"
+      [label]="'Add Account'"
+      (userAction)="addAccount()"
+    >
+    </app-button>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarColor02"
+      aria-controls="navbarColor02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <div class="d-flex">
+        <ng-container *ngIf="isUserLoggedIn; else notLoggedInTemplate">
+          <button
+            mat-button
+            [matMenuTriggerFor]="userMenu"
+            class="my-btn stroked-primary-btn user-btn"
+          >
+            <strong>
+              {{ user?.first_name | titlecase }}
+            </strong>
+            {{ user?.last_name | titlecase }}
+          </button>
+          <mat-menu #userMenu="matMenu">
+            <button mat-menu-item (click)="logout()">Logout</button>
+          </mat-menu>
+        </ng-container>
+        <ng-template #notLoggedInTemplate>
+          <button
+            mat-button
+            class="my-btn stroked-primary-btn user-btn"
+            (click)="logout()"
+          >
+            Login
+          </button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</nav>

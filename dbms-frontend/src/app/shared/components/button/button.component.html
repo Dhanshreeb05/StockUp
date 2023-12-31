@@ -1,0 +1,26 @@
+<ng-container *ngIf="type==='raised'">
+    <button mat-raised-button [ngClass]="classes" (click)="handleAction()" [disabled]="isDisabled">
+        {{ label }}
+        <ng-container *ngIf="icon">
+            <mat-icon>{{ icon }}</mat-icon>
+        </ng-container>
+    </button>
+</ng-container>
+
+<ng-container *ngIf="type==='stroked'">
+    <button mat-stroked-button [ngClass]="classes" (click)="handleAction()" [disabled]="isDisabled">
+        {{ label }}
+        <ng-container *ngIf="icon">
+            <mat-icon>{{ icon }}</mat-icon>
+        </ng-container>
+    </button>
+</ng-container>
+
+<ng-container *ngIf="type==='basic'">
+    <button mat-button [ngClass]="classes" (click)="handleAction()" [disabled]="isDisabled">
+        {{ label }}
+        <ng-container *ngIf="icon">
+            <mat-icon>{{ icon }}</mat-icon>
+        </ng-container>
+    </button>
+</ng-container>

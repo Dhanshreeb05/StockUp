@@ -1,0 +1,189 @@
+@import '../../../../assets/ext_css/variables.scss';
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0000006b;
+  z-index: 99999999999;
+  margin-top: 50px;
+
+  .modal-wrapper {
+    padding: 30px 10px;
+
+    .modal-sm {
+      max-width: 40%;
+    }
+
+    .modal-md {
+      max-width: 70%;
+    }
+
+    .modal-lg {
+      max-width: 95%;
+    }
+
+    .modal-card {
+      margin: 0 auto;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      box-shadow: $cardShadow;
+      background: $whiteBG;
+
+      .modal-header {
+        background: $primaryBG;
+        padding: 0.8rem 1rem !important;
+        border-radius: 0 !important;
+        border-top-right-radius: 30px !important;
+
+        p {
+          padding: 0 !important;
+          margin: 0 !important;
+          margin-top: 5px !important;
+
+          font-size: 18px;
+          font-weight: 500;
+          color: $whiteColor;
+          letter-spacing: 0.5px;
+        }
+
+        .colse-btn {
+          mat-icon, i {
+            color: $whiteColor;
+          }
+
+          &:hover {
+            background: #ccccccad 0% 0% no-repeat padding-box;
+
+            mat-icon, i {
+              color: $blackColor;
+            }
+          }
+        }
+      }
+
+      .modal-content {
+        padding: 10px;
+        max-height: 520px;
+        overflow: auto;
+      }
+
+      .modal-footer {
+        background: $primaryBG;
+        padding: 0.2rem 1rem !important;
+        border-radius: 0 !important;
+        border-bottom-left-radius: 30px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal-wrapper {
+    width: 100% !important;
+    padding: 30px 10px !important;
+
+    .modal-sm {
+      max-width: 50% !important;
+    }
+
+    .modal-md {
+      max-width: 75% !important;
+    }
+
+    .modal-lg {
+      max-width: 95% !important;
+    }
+
+    .modal-card {
+      .modal-header {
+        padding: 0.3rem 1rem !important;
+
+        p {
+          font-size: 16px !important;
+        }
+
+        .colse-btn {
+          height: 22px !important;
+          width: 22px !important;
+          line-height: 22px !important;
+          margin-right: 5px !important;
+          margin-top: 5px !important;
+          
+          mat-icon, i {
+            font-size: 17px !important;
+            height: 22px !important;
+            width: 22px !important;
+          }
+        }
+      }
+
+      .modal-content {
+        padding: 10px 5px !important;
+      }
+
+      .modal-footer {
+        padding: 0.5rem 1rem !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .modal-wrapper {
+    width: 100% !important;
+    padding: 30px 5px !important;
+
+    .modal-sm {
+      max-width: 95% !important;
+    }
+
+    .modal-md {
+      max-width: 95% !important;
+    }
+
+    .modal-lg {
+      max-width: 95% !important;
+    }
+
+    .modal-card {
+      margin: 0 auto;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      box-shadow: $cardShadow;
+      background: $whiteBG;
+
+      .modal-header {
+        padding: 0.3rem 1rem !important;
+
+        p {
+          font-size: 16px !important;
+        }
+
+        .colse-btn {
+          height: 22px !important;
+          width: 22px !important;
+          line-height: 22px !important;
+          margin-right: 5px !important;
+          margin-top: 5px !important;
+          
+          mat-icon, i {
+            font-size: 17px !important;
+            height: 22px !important;
+            width: 22px !important;
+          }
+        }
+      }
+
+      .modal-content {
+        padding: 10px 5px !important;
+      }
+
+      .modal-footer {
+        padding: 0.5rem 1rem !important;
+      }
+    }
+  }
+}
